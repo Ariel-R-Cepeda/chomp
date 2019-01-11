@@ -31,14 +31,45 @@ class Board:
         return str(board_df)
 
     def take(self, row, col):
-        a  =
+        a =  ([[1,1,1,1],[1,1,1,1],[-1,1,1,1]])
+        a.state = np.array([[1,1,1,1],[1,1,1,1],[-1,1,1,1]])
+        i = 0
+        for _ in range(row):
+            a[i][col:] = 0
+            i += 1
+            if i == row:
+                break
 
 
-    
+a = Board(3,4)
+a.take(2,1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class Player:
     def __init__(self):
         pass
 
     def __repr__(self):
         pass
-
