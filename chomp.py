@@ -21,12 +21,24 @@ class ChompGame:
     def play(self):
         self.setup()
         while not self.game_over:
+            n = 0
+            for n in self.players:
+                if n == self.n_players:
+                    n = 0
+                    break
+                else:
+                    break
+            self.current_player = self.players[n]
             print(f'{self.current_player}, it\'s your turn!\n')
             print(self.board)
             self.move()
             if self.board.state[-1][0] == 0:
                 self.game_over = True
-                self.current_player = self.players[]
+                self.current_player = self.players[n-1]
+                self.current_player.wins += 1
+            else:
+                n += 1
+
 
     def setup(self):
         for i in range(1, self.n_players + 1):
@@ -78,23 +90,4 @@ class Player:
 
     def __str__(self):
         return self.name
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
