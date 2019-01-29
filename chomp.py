@@ -12,7 +12,7 @@ class ChompGame:
         self.size = size
         self.board = Board(*size)
         self.game_over = False
-        self.players = []
+        self.players = {}
         self.current_player = None
 
     def __repr__(self):
@@ -83,6 +83,7 @@ class Board:
 class Player:
     def __init__(self):
         self.name = input("\tEnter your name: ")
+        self.players += f' {self.name}'
         self.wins = 0
 
     def __repr__(self):
